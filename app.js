@@ -4,71 +4,58 @@ window.addEventListener("load", initApp);
 
 console.log("JS kører");
 
-function initApp() {
-  
-  const wattrel = {
-    name: "Wattrel",
-    description:
-      "When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them",
-    ability: "volt absorb, wind power",
-    image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/940.png",
-    footprint: undefined,
-    dexindex: 940,
-    type: "electric, flying",
-    subtype: undefined,
-    weaknesses: "ice, rock",
-    gender: "male/female",
-    weight: 3600,
-    height: 40,
-    generation: undefined,
-    spilversion: undefined,
-    canEvolve: true,
-    statsHP: 2,
-    statsAttack: 2,
-    statsDefence: 2,
-    statsSpecialAttack: 3,
-    statsSpecialDefence: 2,
-    statsSpeed: 3,
-  };
+async function initApp() {
+  console.log("iniApp is running");
+  const wattrel = await fetchJsonAboutPokemon(
+    "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/wattrel.json"
+  );
 
   console.log(wattrel);
-
-  function fetchJSON () {
-  
+  showPokemon(wattrel);
+  showPokemon(wattrel);
+  showPokemon(wattrel);
 }
 
-  function showList() {
-    
-  }
-  
-  function showPokemon(pokemon) {
-    const html =
-      /*html*/
-      `<h2>Name: ${pokemon.name}</h2> 
-     <p><img src="${pokemon.image}"></p> 
-  `;
+async function fetchJsonAboutPokemon(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
 
-    document.querySelector("#pokemons").insertAdjacentHTML("beforeend", html);
-    document.querySelector("#pokemons article:last-child").addEventListener("click", pokemonClicked);
+// function showList() {}
 
-   
-  }
+function showPokemon(pokemon) {
+  const html =
+    /*html*/
+    `<article>
+      <h2>Name: ${pokemon.name}</h2> 
+      <p><img src="${pokemon.image}"></p> 
+    </article>
+     `;
+
+  document.querySelector("#pokemons").insertAdjacentHTML("beforeend", html);
+  document
+    .querySelector("#pokemons article:last-child")
+    .addEventListener("click", pokemonClicked);
+
   function pokemonClicked() {
-    console.log(pokemon);
-    document.querySelector("dialog").showModal();
-    // change elements in dialog
-    document.querySelector("#dialog-name").textContent = character.name;
-    document.querySelector("#dialog-image").src = character.image;
-    // show dialog
-    document.querySelector("#dialog-character").showModal();
+    showPokemonModal(pokemon);
   }
-
- showPokemon(wattrel);
-
 }
 
+function showPokemonModal(pokemon) {
+  console.log(pokemon);
+  // document.querySelector("#dialog_window").showModal();
+  // change elements in dialog
+  document.querySelector("#dialog-name").textContent = pokemon.name;
+  document.querySelector("#dialog-image").src = pokemon.image;
+  document.querySelector("#dialog-height").textContent = pokemon.height;
+  document.querySelector("#dialog-weight").textContent = pokemon.weight;
+  // show dialog
+  document.querySelector("#dialog_window").showModal();
+}
 
-// -------------Elementer, der fremhæves via textContent i Potter-app------ 
+// -------------Elementer, der fremhæves via textContent i Potter-app------
 // document.querySelector("#dialog-birthday").textContent = character.dateOfBirth;
 // document.querySelector("#dialog-species").textContent = character.species;
 // document.querySelector("#dialog-gender").textContent = character.gender;
@@ -81,8 +68,6 @@ function initApp() {
 // document.querySelector("#dialog-hogwartsStaff").textContent =character.hogwartsStaff;
 // document.querySelector("#dialog-actor").textContent = character.actor;
 // document.querySelector("#dialog-alive").textContent = character.alive;
-
-
 
 // -----Wattrel properties--------------
 /* <li>Dexindex: ${pokemon.dexindex}</li> */
@@ -127,3 +112,42 @@ function initApp() {
 // properties kan være null eller undefined,
 // men alle skal være der, og have den type der er angivet -
 // altså, string, number, boolean, etc.eller null / undefined
+
+// const wattrel = {
+// name: "Wattrel",
+// description:
+// "When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them",
+// ability: "volt absorb, wind power",
+// image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/940.png",
+// footprint: undefined,
+// dexindex: 940,
+// type: "electric, flying",
+// subtype: undefined,
+// weaknesses: "ice, rock",
+// gender: "male/female",
+// weight: 3600,
+// height: 40,
+// generation: undefined,
+// spilversion: undefined,
+// canEvolve: true,
+// statsHP: 2,
+// statsAttack: 2,
+// statsDefence: 2,
+// statsSpecialAttack: 3,
+// statsSpecialDefence: 2,
+// statsSpeed: 3,
+// };
+
+// const ron = await showPokemon(
+// "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/wattrel.json"
+// );
+
+// console.log(ron);
+// showCharacter(ron);
+
+// const severus = await showPokemon(
+// "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/wattrel.json"
+// );
+// console.log(severus);
+// showCharacter(severus);
+// }
