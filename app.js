@@ -7,7 +7,7 @@ console.log("JS kører");
 async function initApp() {
   console.log("iniApp is running");
   const wattrel = await fetchJsonAboutPokemon(
-    "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/wattrel.json"
+    "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/data/wattrel.json"
   );
 
   console.log(wattrel);
