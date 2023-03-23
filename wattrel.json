@@ -1,0 +1,23 @@
+{
+  "name": "Wattrel",
+  "description": "When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them",
+  "ability": "volt absorb, wind power",
+  "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/940.png",
+  "footprint": "undefined",
+  "dexindex": 940,
+  "type": "electric, flying",
+  "subtype": "undefined",
+  "weaknesses": "ice, rock",
+  "gender": "male/female",
+  "weight": 3600,
+  "height": 40,
+  "generation": "undefined",
+  "spilversion": "undefined",
+  "canEvolve": true,
+  "statsHP": 2,
+  "statsAttack": 2,
+  "statsDefence": 2,
+  "statsSpecialAttack": 3,
+  "statsSpecialDefence": 2,
+  "statsSpeed": 3
+}
