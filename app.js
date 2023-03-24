@@ -11,6 +11,7 @@ async function initApp() {
   );
 
   console.log(wattrel);
+  showList();
   showPokemon(wattrel);
   showPokemon(wattrel);
   showPokemon(wattrel);
@@ -22,7 +23,24 @@ async function fetchJsonAboutPokemon(url) {
   return data;
 }
 
-// function showList() {}
+function showList() {
+  const list =
+    /*html*/
+    `<table>
+        <tr>
+          <th>Name</th>
+          <th>Dexindex</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+             `;
+
+  document
+    .querySelector("#table_of_pokemons")
+    .insertAdjacentHTML("beforeend", list);
+}
 
 function showPokemon(pokemon) {
   const html =
