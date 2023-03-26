@@ -9,12 +9,21 @@ async function initApp() {
   const wattrel = await fetchJsonAboutPokemon(
     "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/data/wattrel.json"
   );
+  const groudon = await fetchJsonAboutPokemon(
+    "https://raw.githubusercontent.com/OliKirk/Poke-Project-Object/main/data/pok%C3%A9mon.json?token=GHSAT0AAAAAAB6HFM3GYO32IIUDC3EB52NIZA4F3ZA"
+  );
+
+const sunflora = await fetchJsonAboutPokemon(
+  "https://raw.githubusercontent.com/sebbex1337/Pokemon-app/main/sunflora.json"
+);
+
 
   console.log(wattrel);
-  showList();
-  showPokemon(wattrel);
-  showPokemon(wattrel);
-  showPokemon(wattrel);
+  console.log(groudon);
+  console.log(sunflora);
+  showPokemonList(wattrel);
+  showPokemonList(groudon);
+  showPokemonList(sunflora);
 }
 
 async function fetchJsonAboutPokemon(url) {
@@ -23,37 +32,22 @@ async function fetchJsonAboutPokemon(url) {
   return data;
 }
 
-function showList() {
-  const list =
+
+function showPokemonList(pokemon) {
+  const html =
     /*html*/
     `<table>
         <tr>
-          <th>Name</th>
-          <th>Dexindex</th>
-          <th>Type</th>
+          <td>${pokemon.name}</td>
+          <td><img src="${pokemon.image}"></td>
+          <td>${pokemon.dexindex}</td>
+          <td>${pokemon.type}</td>
         </tr>
-        <tr>
-          <td></td>
-        </tr>
-             `;
-
-  document
-    .querySelector("#table_of_pokemons")
-    .insertAdjacentHTML("beforeend", list);
-}
-
-function showPokemon(pokemon) {
-  const html =
-    /*html*/
-    `<article>
-      <h2>Name: ${pokemon.name}</h2> 
-      <p><img src="${pokemon.image}"></p> 
-    </article>
      `;
 
   document.querySelector("#pokemons").insertAdjacentHTML("beforeend", html);
   document
-    .querySelector("#pokemons article:last-child")
+    .querySelector("#pokemons table:last-child")
     .addEventListener("click", pokemonClicked);
 
   function pokemonClicked() {
@@ -168,4 +162,25 @@ function showPokemonModal(pokemon) {
 // );
 // console.log(severus);
 // showCharacter(severus);
+// }
+
+
+
+// function showList() {
+  // const list =
+    /*html*/
+    // `<table>
+        // <tr>
+          // <th>Name</th>
+          // <th>Dexindex</th>
+          // <th>Type</th>
+        // </tr>
+        // <tr>
+          // <td></td>
+        // </tr>
+            //  `;
+
+  // document
+    // .querySelector("#table_of_pokemons")
+    // .insertAdjacentHTML("beforeend", list);
 // }
