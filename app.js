@@ -61,9 +61,15 @@ function showPokemonModal(pokemon) {
   // change elements in dialog
   document.querySelector("#dialog-name").textContent = pokemon.name;
   document.querySelector("#dialog-image").src = pokemon.image;
+  document.querySelector("#dialog-weight").textContent = pokemon.description;
   document.querySelector("#dialog-height").textContent = pokemon.height;
   document.querySelector("#dialog-weight").textContent = pokemon.weight;
-  // show dialog
+  document.querySelector("#dialog-ability").textContent = pokemon.abilty;
+  document.querySelector("#dialog-gender").textContent = pokemon.gender;
+  document.querySelector("#dialog-footprint").textContent = pokemon.footprint;
+  document.querySelector("#dialog-canEvolve").textContent = pokemon.canEvolve;
+  document.querySelector("#dialog-dexindex").textContent = pokemon.dexindex;
+  document.querySelector("#dialog-generation").textContent = pokemon.generation;
   document.querySelector("#dialog_window").showModal();
 }
 
