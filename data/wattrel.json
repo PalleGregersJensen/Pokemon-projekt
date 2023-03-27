@@ -12,7 +12,7 @@
   "weight": 3600,
   "height": 40,
   "generation": null,
-  "spilversion": null,
+  "spilversion": "Unknown",
   "canEvolve": true,
   "statsHP": 2,
   "statsAttack": 2,
