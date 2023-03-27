@@ -20,7 +20,7 @@ async function initApp() {
   // "https://raw.githubusercontent.com/sebbex1337/Pokemon-app/main/sunflora.json"
   // );
 
-  console.log(wattrel);
+  // console.log(wattrel);
   // console.log(groudon);
   // console.log(sunflora);
   // showPokemonList(wattrel);
