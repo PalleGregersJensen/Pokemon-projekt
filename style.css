@@ -12,32 +12,36 @@ header {
   position: fixed;
 }
 
+/* .grid-container { */
+  /* display: grid; */
+  /* grid-template-columns: (2, 1fr); */
+  /* grid-template-rows: (3, 1fr); */
+  /* gap: 10px; */
+/* } */
+
 #dialog_window {
   width: 45vw;
   height: 45vw;
   background-color: red;
-  /* display: grid; */
-  /* grid-template-columns: repeat(2, 1fr); */
-  /* grid-template-rows: repeat(3, 1fr); */
-  /* gap: 10px; */
 }
 
-/* #dialog-name { */
-  /* grid-row: 1; */
-  /* grid-column: 1 / span 2; */
-/* } */
+#dialog-name { 
+ grid-row: 1; 
+ grid-column: 1 / span 2; 
+ } 
 
-/* #dialog-image { */
-  /* grid-row: 1; */
-  /* grid-column: 1 / span 2; */
-/* } */
+#dialog-image {
+  width: 25vw;
+  height: 25vh;
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
 
 table,
 img {
   width: 10vw;
   height: 10vh;
 }
-
 
 table,
 th,
@@ -54,21 +58,7 @@ tr {
   height: 20vh;
 }
 
-#dialog-image {
-    width: 25vw;
-    height: 25vh;
+
+footer {
+  text-align: center;
 }
-
-/* #closeButton { */
-/* } */
-
-
-/* #pokemons { */
-/* display: grid; */
-/* grid-template-rows: auto; */
-/* grid-template-columns: auto; */
-/* } */
-
-/* table { */
-/* border:  */
-/* } */

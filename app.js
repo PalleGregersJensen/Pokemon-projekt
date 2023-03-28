@@ -8,23 +8,6 @@ async function initApp() {
   console.log("iniApp is running");
   const pokemon = await getData();
   pokemon.forEach(showPokemonList);
-
-  // const wattrel = await fetchJsonAboutPokemon(
-  // "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/data/wattrel.json"
-  // );
-  // const groudon = await fetchJsonAboutPokemon(
-  // "https://raw.githubusercontent.com/OliKirk/Poke-Project-Object/main/data/pok%C3%A9mon.json?token=GHSAT0AAAAAAB6HFM3GYO32IIUDC3EB52NIZA4F3ZA"
-  // );
-
-  // const sunflora = await fetchJsonAboutPokemon(
-  // "https://raw.githubusercontent.com/sebbex1337/Pokemon-app/main/sunflora.json"
-  // );
-
-  // console.log(wattrel);
-  // console.log(groudon);
-  // console.log(sunflora);
-  // showPokemonList(wattrel);
-  // showPokemonList(groudon);
   showPokemonList(pokemon);
 }
 
@@ -60,20 +43,52 @@ function showPokemonList(pokemon) {
 
 function showPokemonModal(pokemon) {
   console.log(pokemon);
-  // document.querySelector("#dialog_window").showModal();
-  // change elements in dialog
-  document.querySelector("#dialog-name").textContent = pokemon.name;
+  let generation = generateGeneration(pokemon);
+  document.querySelector("#dialog-generation").textContent = `Generation: ${generation}`;
+
+  document.querySelector("#dialog-name").textContent = `Name: ${pokemon.name}`;
   document.querySelector("#dialog-image").src = pokemon.image;
-  document.querySelector("#dialog-weight").textContent = pokemon.description;
-  document.querySelector("#dialog-height").textContent = pokemon.height;
-  document.querySelector("#dialog-weight").textContent = pokemon.weight;
-  document.querySelector("#dialog-ability").textContent = pokemon.abilty;
-  document.querySelector("#dialog-gender").textContent = pokemon.gender;
-  document.querySelector("#dialog-footprint").textContent = pokemon.footprint;
-  document.querySelector("#dialog-canEvolve").textContent = pokemon.canEvolve;
-  document.querySelector("#dialog-dexindex").textContent = pokemon.dexindex;
-  document.querySelector("#dialog-generation").textContent = pokemon.generation;
+  document.querySelector(
+    "#dialog-description"
+  ).textContent = `Description: ${pokemon.description}`;
+  document.querySelector(
+    "#dialog-height"
+  ).textContent = `Height: ${pokemon.height} cm`;
+  document.querySelector(
+    "#dialog-weight"
+  ).textContent = `Weight: ${pokemon.weight} kg`;
+  document.querySelector("#dialog-ability").textContent = `Ability: ${pokemon.ability}`;
+  document.querySelector(
+    "#dialog-gender"
+  ).textContent = `Gender: ${pokemon.gender}`;
+  // document.querySelector(
+    // "#dialog-generation"
+  // ).textContent = `Generation: ${pokemon.generation}`;
+  document.querySelector("#dialog-footprint").src = pokemon.footprint;
+  document.querySelector(
+    "#dialog-canEvolve"
+  ).textContent = `Evolve: ${pokemon.canEvolve}`;
+  document.querySelector(
+    "#dialog-dexindex"
+  ).textContent = `Dexindex: ${pokemon.dexindex}`;
+   document.querySelector(
+     "#dialog-ability"
+   ).textContent = `Ability: ${pokemon.ability}`;
   document.querySelector("#dialog_window").showModal();
+}
+
+function generateGeneration(pokemon) {
+  console.log("Vises dette?")
+  let generation = pokemon.generation;
+  if (
+    pokemon.generation === undefined ||
+    pokemon.generation === null ||
+    pokemon.generation === "undefined"
+  ) {
+    generation = `${pokemon.name}'s generation is unknown`;
+    console.log(generation);
+  }  
+    return generation;
 }
 
 // -------------Elementer, der fremhæves via textContent i Potter-app------
@@ -159,35 +174,19 @@ function showPokemonModal(pokemon) {
 // statsSpeed: 3,
 // };
 
-// const ron = await showPokemon(
-// "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/wattrel.json"
+// const wattrel = await fetchJsonAboutPokemon(
+// "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/data/wattrel.json"
+// );
+// const groudon = await fetchJsonAboutPokemon(
+// "https://raw.githubusercontent.com/OliKirk/Poke-Project-Object/main/data/pok%C3%A9mon.json?token=GHSAT0AAAAAAB6HFM3GYO32IIUDC3EB52NIZA4F3ZA"
 // );
 
-// console.log(ron);
-// showCharacter(ron);
-
-// const severus = await showPokemon(
-// "https://raw.githubusercontent.com/PalleGregersJensen/Pokemon-projekt/main/wattrel.json"
+// const sunflora = await fetchJsonAboutPokemon(
+// "https://raw.githubusercontent.com/sebbex1337/Pokemon-app/main/sunflora.json"
 // );
-// console.log(severus);
-// showCharacter(severus);
-// }
 
-// function showList() {
-// const list =
-/*html*/
-// `<table>
-// <tr>
-// <th>Name</th>
-// <th>Dexindex</th>
-// <th>Type</th>
-// </tr>
-// <tr>
-// <td></td>
-// </tr>
-//  `;
-
-// document
-// .querySelector("#table_of_pokemons")
-// .insertAdjacentHTML("beforeend", list);
-// }
+// console.log(wattrel);
+// console.log(groudon);
+// console.log(sunflora);
+// showPokemonList(wattrel);
+// showPokemonList(groudon);
