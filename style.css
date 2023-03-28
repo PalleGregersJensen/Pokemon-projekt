@@ -12,12 +12,12 @@ header {
   position: fixed;
 }
 
-/* .grid-container { */
-  /* display: grid; */
-  /* grid-template-columns: (2, 1fr); */
-  /* grid-template-rows: (3, 1fr); */
-  /* gap: 10px; */
-/* } */
+/* .grid-container {    */
+     /* display: grid;    */
+     /* grid-template-columns: (2, 1fr);    */
+     /* grid-template-rows: (3, 1fr);    */
+     /* gap: 10%;    */
+   /* }    */
 
 #dialog_window {
   width: 45vw;

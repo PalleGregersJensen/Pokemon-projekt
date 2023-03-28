@@ -43,8 +43,19 @@ function showPokemonList(pokemon) {
 
 function showPokemonModal(pokemon) {
   console.log(pokemon);
+
+  // Generation undefined or null
   let generation = generateGeneration(pokemon);
-  document.querySelector("#dialog-generation").textContent = `Generation: ${generation}`;
+  document.querySelector(
+    "#dialog-generation"
+  ).textContent = `Generation: ${generation}`;
+
+
+  // canEvolve true, false or undefined
+  let canEvolve = generateCanEvolve(pokemon);
+  document.querySelector(
+    "#dialog-canEvolve"
+  ).textContent = `Evolve: ${canEvolve}`;
 
   document.querySelector("#dialog-name").textContent = `Name: ${pokemon.name}`;
   document.querySelector("#dialog-image").src = pokemon.image;
@@ -57,28 +68,68 @@ function showPokemonModal(pokemon) {
   document.querySelector(
     "#dialog-weight"
   ).textContent = `Weight: ${pokemon.weight} kg`;
-  document.querySelector("#dialog-ability").textContent = `Ability: ${pokemon.ability}`;
+  document.querySelector(
+    "#dialog-ability"
+  ).textContent = `Ability: ${pokemon.ability}`;
   document.querySelector(
     "#dialog-gender"
   ).textContent = `Gender: ${pokemon.gender}`;
   // document.querySelector(
-    // "#dialog-generation"
+  // "#dialog-generation"
   // ).textContent = `Generation: ${pokemon.generation}`;
   document.querySelector("#dialog-footprint").src = pokemon.footprint;
-  document.querySelector(
-    "#dialog-canEvolve"
-  ).textContent = `Evolve: ${pokemon.canEvolve}`;
+  // document.querySelector(
+  // "#dialog-canEvolve"
+  // ).textContent = `Evolve: ${pokemon.canEvolve}`;
   document.querySelector(
     "#dialog-dexindex"
   ).textContent = `Dexindex: ${pokemon.dexindex}`;
-   document.querySelector(
-     "#dialog-ability"
-   ).textContent = `Ability: ${pokemon.ability}`;
+document.querySelector("#dialog-type").textContent = `Type: ${pokemon.type}`
+          
+document.querySelector("#dialog-subtype").textContent = `Subtype: ${pokemon.subtype}`;
+       
+document.querySelector(
+  "#dialog-weaknesses"
+).textContent = `Weaknesses: ${pokemon.weaknesses}`;
+    
+document.querySelector(
+  "#dialog-spilversion"
+).textContent = `Game version: ${pokemon.spilversion}`;
+   
+document.querySelector(
+  "#dialog-statsHP"
+).textContent = `HP: ${pokemon.statsHP}`;
+       
+document.querySelector(
+  "#dialog-statsAttack"
+).textContent = `Attack: ${pokemon.statsAttack}`;
+   
+document.querySelector(
+  "#dialog-statsDefence"
+).textContent = `Defence: ${pokemon.statsDefence}`;
+  
+document.querySelector(
+  "#dialog-statsSpecialAttack"
+).textContent = `Special attack: ${pokemon.statsSpecialAttack}`;
+  
+document.querySelector(
+  "#dialog-statsSpecialDefence"
+).textContent = `Special defence: ${pokemon.statsSpecialDefence}`;
+
+document.querySelector(
+  "#dialog-statsSpeed"
+).textContent = `Statsspeed: ${pokemon.statsSpeed}`;
+    
+  
+  
+  document.querySelector(
+    "#dialog-ability"
+  ).textContent = `Ability: ${pokemon.ability}`;
   document.querySelector("#dialog_window").showModal();
 }
 
 function generateGeneration(pokemon) {
-  console.log("Vises dette?")
+  console.log("Vises dette?");
   let generation = pokemon.generation;
   if (
     pokemon.generation === undefined ||
@@ -87,8 +138,23 @@ function generateGeneration(pokemon) {
   ) {
     generation = `${pokemon.name}'s generation is unknown`;
     console.log(generation);
-  }  
-    return generation;
+  }
+  return generation;
+}
+
+function generateCanEvolve(pokemon) {
+  console.log("Vises dette?");
+  let canEvolve = pokemon.canEvolve;
+  if (pokemon.canEvolve === true) {
+    canEvolve = `${pokemon.name} can evolve`;
+    console.log(canEvolve);
+  } else if (pokemon.canEvolve === false) {
+    canEvolve = `${pokemon.name} can't evolve`;
+  } else {
+    canEvolve = `Unknown`;
+  }
+
+  return canEvolve;
 }
 
 // -------------Elementer, der fremhæves via textContent i Potter-app------
