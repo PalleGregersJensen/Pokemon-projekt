@@ -12,7 +12,6 @@ header {
   position: fixed;
 }
 
-
 /* #pokemons {     */
       /* display: grid;     */
       /* grid-template-columns: (2, 1fr);     */
@@ -32,16 +31,16 @@ header {
  } 
 
 #dialog-image {
-  width: 25vw;
-  height: 25vh;
+  width: 20vw;
+  height: 32vh;
   grid-row: 1;
   grid-column: 1 / span 2;
 }
 
 table,
 img {
-  width: 10vw;
-  height: 10vh;
+  width: 8vw;
+  height: 15vh;
 }
 
 table,
@@ -59,7 +58,11 @@ tr {
   height: 20vh;
 }
 
-
 footer {
   text-align: center;
+}
+#closeButton {
+  background-color:white;
+  height: 6vh;
+  width: 15vw;
 }

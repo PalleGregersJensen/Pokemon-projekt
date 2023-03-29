@@ -119,7 +119,7 @@ function showPokemonModal(pokemon) {
 
   document.querySelector(
     "#dialog-statsSpeed"
-  ).textContent = `Statsspeed: ${pokemon.statsSpeed}`;
+  ).textContent = `Speed stats: ${pokemon.statsSpeed}`;
 
   document.querySelector(
     "#dialog-ability"
