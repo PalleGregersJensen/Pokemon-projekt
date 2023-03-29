@@ -8,7 +8,7 @@ async function initApp() {
   console.log("iniApp is running");
   const pokemon = await getData();
   pokemon.forEach(showPokemonList);
-  showPokemonList(pokemon);
+  // showPokemonList(pokemon);
 }
 
 async function getData(url) {
