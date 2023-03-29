@@ -54,7 +54,7 @@ function showPokemonModal(pokemon) {
   let canEvolve = generateCanEvolve(pokemon);
   document.querySelector(
     "#dialog-canEvolve"
-  ).textContent = `Evolve: ${canEvolve}`;
+  ).textContent = `Evolve status: ${canEvolve}`;
 
   document.querySelector("#dialog-name").textContent = `Name: ${pokemon.name}`;
   document.querySelector("#dialog-image").src = pokemon.image;
