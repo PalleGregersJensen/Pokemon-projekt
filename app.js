@@ -50,7 +50,6 @@ function showPokemonModal(pokemon) {
     "#dialog-generation"
   ).textContent = `Generation: ${generation}`;
 
-
   // canEvolve true, false or undefined
   let canEvolve = generateCanEvolve(pokemon);
   document.querySelector(
@@ -67,7 +66,7 @@ function showPokemonModal(pokemon) {
   ).textContent = `Height: ${pokemon.height} cm`;
   document.querySelector(
     "#dialog-weight"
-  ).textContent = `Weight: ${pokemon.weight} kg`;
+  ).textContent = `Weight: ${pokemon.weight} g`;
   document.querySelector(
     "#dialog-ability"
   ).textContent = `Ability: ${pokemon.ability}`;
@@ -84,44 +83,44 @@ function showPokemonModal(pokemon) {
   document.querySelector(
     "#dialog-dexindex"
   ).textContent = `Dexindex: ${pokemon.dexindex}`;
-document.querySelector("#dialog-type").textContent = `Type: ${pokemon.type}`
-          
-document.querySelector("#dialog-subtype").textContent = `Subtype: ${pokemon.subtype}`;
-       
-document.querySelector(
-  "#dialog-weaknesses"
-).textContent = `Weaknesses: ${pokemon.weaknesses}`;
-    
-document.querySelector(
-  "#dialog-spilversion"
-).textContent = `Game version: ${pokemon.spilversion}`;
-   
-document.querySelector(
-  "#dialog-statsHP"
-).textContent = `HP: ${pokemon.statsHP}`;
-       
-document.querySelector(
-  "#dialog-statsAttack"
-).textContent = `Attack: ${pokemon.statsAttack}`;
-   
-document.querySelector(
-  "#dialog-statsDefence"
-).textContent = `Defence: ${pokemon.statsDefence}`;
-  
-document.querySelector(
-  "#dialog-statsSpecialAttack"
-).textContent = `Special attack: ${pokemon.statsSpecialAttack}`;
-  
-document.querySelector(
-  "#dialog-statsSpecialDefence"
-).textContent = `Special defence: ${pokemon.statsSpecialDefence}`;
+  document.querySelector("#dialog-type").textContent = `Type: ${pokemon.type}`;
 
-document.querySelector(
-  "#dialog-statsSpeed"
-).textContent = `Statsspeed: ${pokemon.statsSpeed}`;
-    
-  
-  
+  document.querySelector(
+    "#dialog-subtype"
+  ).textContent = `Subtype: ${pokemon.subtype}`;
+
+  document.querySelector(
+    "#dialog-weaknesses"
+  ).textContent = `Weaknesses: ${pokemon.weaknesses}`;
+
+  document.querySelector(
+    "#dialog-spilversion"
+  ).textContent = `Game version: ${pokemon.spilversion}`;
+
+  document.querySelector(
+    "#dialog-statsHP"
+  ).textContent = `HP: ${pokemon.statsHP}`;
+
+  document.querySelector(
+    "#dialog-statsAttack"
+  ).textContent = `Attack: ${pokemon.statsAttack}`;
+
+  document.querySelector(
+    "#dialog-statsDefence"
+  ).textContent = `Defence: ${pokemon.statsDefence}`;
+
+  document.querySelector(
+    "#dialog-statsSpecialAttack"
+  ).textContent = `Special attack: ${pokemon.statsSpecialAttack}`;
+
+  document.querySelector(
+    "#dialog-statsSpecialDefence"
+  ).textContent = `Special defence: ${pokemon.statsSpecialDefence}`;
+
+  document.querySelector(
+    "#dialog-statsSpeed"
+  ).textContent = `Statsspeed: ${pokemon.statsSpeed}`;
+
   document.querySelector(
     "#dialog-ability"
   ).textContent = `Ability: ${pokemon.ability}`;
